@@ -52,7 +52,6 @@ export class CategoryPhones{
     async clickOnPlaceOrder(){
         await this.page.locator(this.placeOrder).click()
     }
-
     async placeOrderDetails(){
         await this.page.locator(this.pName).fill(demotestdata.name)
         await this.page.locator(this.pCountry).fill(demotestdata.country)

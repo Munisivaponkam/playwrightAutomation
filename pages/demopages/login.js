@@ -7,7 +7,6 @@ export class LogInPage{
         this.title = '//a[@id="nava"]'
         this.homeTab = '//a[contains(text(),"Home")]'
     }
-
     async verifyLoginValidations(){
         await this.lannchTheApplication()
         await this.verifyLoginPage()
