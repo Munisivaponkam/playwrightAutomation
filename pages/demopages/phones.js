@@ -2,7 +2,7 @@ import{test,expect} from "@playwright/test"
 import demotestdata from "../../testdata/demoBlaze/demo_Blaze_test_data.json"
 
 export class CategoryPhones{
-
+    
     constructor(page){
         this.page=page
         this.phoneLink="//a[text()='Phones']"
@@ -25,42 +25,35 @@ export class CategoryPhones{
         await this.selectOne()
         await this.addCartButton()
         await this.clickOnCartLink()
-       await this.clickOnPlaceOrder()
-       await this.placeOrderDetails()
-       await this.clickOkButton()
+        await this.clickOnPlaceOrder()
+        await this.placeOrderDetails()
+        await this.clickOkButton()
     }
 
     async clickOnPhoneTab(){
-           await this.page.locator(this.phoneLink).click()
+        await this.page.locator(this.phoneLink).click()
     }
 
     async selectOne(){
-    //    const mobiles= await this.page.$$(this.selectPhones)
-    //    for(const mobile of mobiles){
-    //     let value=await this.mobile.textContent()
-    //     if(await this.value.includes("this.mobileName")){
-    //         await this.mobile.click()
-    //         break
-    //     }
-    //    }
-      await this.page.locator(this.mobileName).click()
+       await this.page.locator(this.mobileName).click()
     }
-       async addCartButton(){
+
+    async addCartButton(){
         await this.page.on("dialog",async dialog=>{
-            await dialog.accept()
-        })
+        await dialog.accept()
+    })
         await this.page.locator(this.addCart).click()
-       }
+    }
 
-       async clickOnCartLink(){
+    async clickOnCartLink(){
         await this.page.locator(this.cartLink).click()
-       }
+    }
 
-       async clickOnPlaceOrder(){
+    async clickOnPlaceOrder(){
         await this.page.locator(this.placeOrder).click()
-       }
+    }
 
-       async placeOrderDetails(){
+    async placeOrderDetails(){
         await this.page.locator(this.pName).fill(demotestdata.name)
         await this.page.locator(this.pCountry).fill(demotestdata.country)
         await this.page.locator(this.pCity).fill(demotestdata.city)
@@ -68,13 +61,9 @@ export class CategoryPhones{
         await this.page.locator(this.pMonth).fill(demotestdata.month)
         await this.page.locator(this.pYear).fill(demotestdata.year)
         await this.page.locator(this.purchase).click()
-       }
+    }
 
-       async clickOkButton(){
+    async clickOkButton(){
         await this.page.locator(this.okButton).click()
-       }
-
-
-
-
+    }
 }
