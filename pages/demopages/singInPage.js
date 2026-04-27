@@ -14,8 +14,7 @@ export class SingInPage{
 
     async verifySingInFlow(){
         this.clickSingInTab()
-        // this.EnterLoginValidCredientials()
-        // this.clickOnLoginButton()
+
     }
 
     async clickSingInTab(){

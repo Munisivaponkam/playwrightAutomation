@@ -80,6 +80,4 @@ export class RegisterPage{
     async clickOnCreateButton(){
         await this.page.locator(this.createAccount).click()
     }
-    
-    //hari krishna
 }
